@@ -80,7 +80,7 @@ public class ListaDesordenada <X>
 					atual=atual.getProx();
 
 				if(atual.getProx() == null)
-					///throw new Exception("Informação ausentete");
+					///throw new Exception("Informaï¿½ï¿½o ausentete");
 
 				atual.setProx(atual.getProx().getProx());
 
@@ -118,5 +118,39 @@ public class ListaDesordenada <X>
 
 		return ret;
 	}
+
+	public boolean equals (Object obj){
+		if(this==obj)
+			return true;
+		
+		if(obj == null)
+			return false;
+		
+		if (this.getClass() != obj.getClass())
+			return false;
+		
+		ListaDesordenada<X> lis = (ListaDesordenada<X>) obj;
+
+		No atualThis= = this.prim, atualLis = lis.prim;
+
+		while(atualThis!=null && atualLis != null)
+		{
+			if((!atualThis.getInfo().equals(atualLis.getnfo()))
+				return false;
+			
+			atualThis= atualThis.getProx();
+			atualLis = atualLis .getProx();		
+		}
+
+		if(atualThis!=null)
+			return false;
+		
+		if(atualLis!=null)
+			return
+		
+		return true;
+
+	}
+
 
 }
