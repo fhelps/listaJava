@@ -152,5 +152,18 @@ public class ListaDesordenada <X>
 
 	}
 
+	
+	public int hashCode ()
+	{
+		int ret = 66;
+
+		No atual = this.prim;
+		while (atual != null){
+			
+			ret += ret*7 + ret.getInfo().hashCode(); 
+			atual = atual.getProx();
+		}
+	}
+
 
 }
