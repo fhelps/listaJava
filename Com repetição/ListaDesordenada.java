@@ -163,7 +163,35 @@ public class ListaDesordenada <X>
 			ret += ret*7 + ret.getInfo().hashCode(); 
 			atual = atual.getProx();
 		}
-	}
+	
+		public ListaDesordenada (ListaDesordenada<X> modelo) throws Exception
+		{
+			if (modelo == null)
+				throw new Exception ("Modelo Ausente");
+			
+				if(modelo.prim=null)
+				{
+					this.prim = null;
+					return;
+				}
+
+				this.prim = new No (modelo.prim.getInfo(), mull);
+
+				if (modelo.prox.getProx() == null)
+					return;
+				
+				No atualThis = ths.prim, atualLis = lis.prim;
+
+				while (atualThis != null && atualLis!=null)
+				{
+					if(!atualThis.getInfo().equals(atualLis.getInfo()))
+						return false;
+
+						atualThis = atualThis.getProx();
+						atualLis = atualLis.getProx();
+				}
+		}
+
 
 
 }
